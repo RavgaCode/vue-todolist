@@ -16,4 +16,10 @@ var app = new Vue({
       },
     ],
   },
+  methods: {
+    removeTodo(index) {
+      // Elimino l'elemento nell'array all'index specifico
+      this.doList.splice(index, 1);
+    },
+  },
 });
