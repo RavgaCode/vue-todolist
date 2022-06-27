@@ -17,6 +17,17 @@
   </head>
   <body>
     <div id="app">
+      <!-- Bottone inserimento nuova task -->
+      <div class="inputs">
+        <input
+          v-model="newTaskText"
+          @keyup.enter="addNewTask()"
+          type="text"
+          placeholder="Inserisci una nuova task"
+        />
+        <button @click="addNewTask()">Aggiungi</button>
+      </div>
+      <!-- Lista cose da fare -->
       <ul id="do-list-container">
         <li
           class="task"
@@ -25,7 +36,7 @@
         >
           {{item.text}}
           <div class="actions">
-            <span @click="removeTodo(index)">
+            <span @click="removeTask(index)">
               <i class="fa fa-times" aria-hidden="true"></i>
             </span>
           </div>
