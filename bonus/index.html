@@ -34,7 +34,7 @@
           v-for="(item, index) in doList"
           v-bind:class="{'done_task' : item.done}"
         >
-          {{item.text}}
+          <span @click="changeStatus(index)">{{item.text}}</span>
           <div class="actions">
             <span @click="removeTask(index)">
               <i class="fa fa-times" aria-hidden="true"></i>
